@@ -1,0 +1,67 @@
+/* Footer Styles */
+footer {
+    background-color: #1c2331;
+}
+
+footer .social-section {
+    background-color: orangered;
+}
+
+footer .social-section .me-5 {
+    margin-right: 1.25rem !important;
+}
+
+footer .social-section a {
+    color: white;
+    margin-right: 1rem;
+}
+
+footer .container h6 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.5;
+    text-align: center; /* Center the heading */
+}
+
+footer .container hr {
+    width: 60px;
+    background-color: #7c4dff;
+    height: 2px;
+    margin: 0.5rem auto; /* Center the horizontal rule */
+}
+
+footer .container p, 
+footer .container a {
+    color: white;
+    margin: 0.5rem 0; /* Adjust margin for spacing */
+    text-align: center; /* Center the text */
+    display: block; /* Ensure block display for centering */
+}
+
+footer .contact-info i {
+    color: white;
+    margin-right: 10px;
+}
+
+footer .text-center.p-3 {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    footer .social-section {
+        text-align: center;
+    }
+    
+    footer .container .row {
+        text-align: center;
+    }
+    
+    footer .container .row .col-md-4,
+    footer .container .row .col-md-3 {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+}

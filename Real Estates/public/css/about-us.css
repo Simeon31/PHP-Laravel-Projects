@@ -1,0 +1,324 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6; /* Global line height for better readability */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF6F61;
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px; /* Increased padding for better spacing */
+    border-bottom: 1px solid #E0E0E0;
+    opacity: 0; /* Start sections invisible */
+    transform: translateY(20px); /* Start sections slightly lower */
+    animation: fadeInUp 1s ease forwards; /* Apply the animation */
+    animation-delay: 0.3s; /* Delay for sequential animation */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: 700;
+    opacity: 0; /* Start headings invisible */
+    transform: translateX(-30px) scale(0.8); /* Start headings off and scaled down */
+    animation: fancyHeader 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; /* Apply the fancy animation */
+    animation-delay: 0.6s; /* Delay for sequential animation */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+section h2:hover {
+    color: #FF6F61;
+    text-shadow: 2px 2px 5px rgba(255, 111, 97, 0.5);
+}
+
+@keyframes fancyHeader {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px) scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(15px) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+section p {
+    font-size: 1rem; /* Base font size for body text */ 
+    margin-bottom: 20px; /* Spacing between paragraphs */
+    color: #444; /* Slightly lighter color for softer contrast */
+    max-width: 800px; /* Optional: limit text width for easier reading */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify; /* Optional: justify text for neat alignment */
+}
+
+/* Unique Section */
+section.unique ul {
+    list-style: none;
+    padding: 0;
+}
+
+section.unique ul li {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    position: relative;
+    padding-left: 25px;
+}
+
+section.unique ul li::before {
+    content: '✓';
+    color: #FF6F61;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Team Section */
+.team-section {
+    background-color: #f9f9f9; /* Light gray background for contrast */
+    padding: 60px 0;
+    text-align: center; /* Center all text inside the team section */
+}
+
+.team-member {
+    margin-bottom: 30px;
+}
+
+.team-member-inner {
+    padding: 20px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    transform: scale(1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all elements horizontally */
+}
+
+.team-member-inner:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: #FF6F61; /* Original color for hover effect */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.team-member-image {
+    margin-bottom: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-flex; /* Flex for centering content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    width: 150px; /* Ensure container has consistent size */
+    height: 150px;
+}
+
+/* Style for image inside the team-member-image container */
+.team-member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease; /* Animation for image hover */
+}
+
+.team-member-image img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.team-member-inner h3 {
+    font-size: 1.5rem; /* Larger font size for better prominence */
+    color: #003366; /* Original color for the name */
+    margin-top: 0.5rem; /* Reduced space between image and heading */
+    margin-bottom: 0.5rem; /* Reduced space after heading */
+    font-weight: bold; /* Make the name bold */
+    line-height: 1.2; /* Improved line height for better readability */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Animation for text */
+}
+
+.team-member-inner h3 span {
+    display: block; /* Block display to ensure role is on a new line */
+    font-size: 1.125rem; /* Slightly smaller font size for role */
+    color: #666; /* Gray color for the role */
+    font-weight: normal; /* Normal weight for the role */
+    margin-top: 0.25rem; /* Space between name and role */
+    transition: color 0.3s ease; /* Animation for text */
+}
+
+.team-member-inner h3:hover {
+    color: #FF6F61; /* Original color on hover */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+.team-member-inner h3 span:hover {
+    color: #003366; /* Darker color for role on hover */
+}
+
+.team-member-info {
+    text-align: center; /* Center text within this section */
+}
+
+.team-member-info p {
+    font-size: 0.875rem;
+    margin: 0.5rem 0; /* Consistent vertical spacing between items */
+    line-height: 1.6; /* Improved readability */
+    color: #555; /* Dark gray for text */
+}
+
+.team-member-info p strong {
+    color: #003366; /* Original color for labels */
+}
+
+.team-member-info .category-list {
+    margin-top: 0.5rem; /* Space above the category list */
+}
+
+.team-member-info .category-list span {
+    display: inline-block; /* Inline-block to ensure alignment */
+    margin-right: 0.5rem; /* Space between categories */
+    color: #003366; /* Original color for categories */
+    transition: color 0.3s ease; /* Animation for hover effect */
+}
+
+.team-member-info .category-list span:hover {
+    color: #FF6F61; /* Original color for categories on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-member-inner {
+        padding: 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .team-member-image {
+        width: 120px; /* Adjust size for smaller screens */
+        height: 120px;
+    }
+
+    .team-member-inner h3 {
+        font-size: 1.25rem; /* Adjust font size for smaller screens */
+    }
+
+    .team-member-info p {
+        font-size: 0.8125rem; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Contact Section */
+.contact {
+    background: url('https://i0.wp.com/goelgangadevelopments.com/wp-content/uploads/2019/08/28.jpg?fit=1000%2C500&ssl=1') no-repeat center center/cover; /* Add your background image here */
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff; /* Set text color to white for better contrast */
+}
+
+.contact .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better text readability */
+    border-radius: 8px; /* Optional: Adds rounded corners to the container */
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    color: #fff; /* Ensure the heading is visible against the background */
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact p {
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 20px;
+    color: #f9f9f9; /* Light text color for readability on dark background */
+}
+
+.contact a {
+    color: #FF6F61;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.contact .contact-channels {
+    margin-top: 20px;
+}
+
+.contact .social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact .social-icon:hover {
+    background-color: #FF6F61;
+}
+
+.contact .facebook {
+    background-color: #3b5998;
+}
+
+.contact .twitter {
+    background-color: #1da1f2;
+}
+
+.contact .instagram {
+    background-color: #e4405f;
+}
+
+.contact .linkedin {
+    background-color: #0077b5;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .contact .container {
+        padding: 20px;
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact p {
+        font-size: 0.875rem;
+    }
+}
+

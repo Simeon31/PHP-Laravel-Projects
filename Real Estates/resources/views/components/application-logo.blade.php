@@ -1,0 +1,1 @@
+<img src="{{ asset('Images/Real-estate-logo-House-logo-Home-logo-Graphics-22469965-1-removebg.png') }}" width="100px">
